@@ -1,0 +1,21 @@
+section:
+  name: Experiences
+  id: experiences
+  enable: true
+  weight: 3
+  showOnNavbar: true
+
+experiences:
+  - company:
+      name: Softvence Agency
+      url: "https://softvence.agency"
+      location: Dhaka, Bangladesh
+
+    positions:
+      - designation: CMS Frontend Developer
+        start: September 2025
+        responsibilities:
+          - "Developing responsive CMS-based frontend interfaces."
+          - "Building reusable UI components using React and modern web technologies."
+          - "Collaborating with design and backend teams on client projects."
+          - "Working on performance optimization and maintainable frontend code."

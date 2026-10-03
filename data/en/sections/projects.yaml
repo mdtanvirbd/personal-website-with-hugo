@@ -1,0 +1,47 @@
+section:
+  name: Projects
+  id: projects
+  enable: true
+  weight: 4
+  showOnNavbar: true
+
+projects:
+  - name: Book Store Web App
+    role: Developer
+    timeline: "2025"
+    summary: "A responsive e-commerce web application built with React and React Router."
+    tags:
+      - React
+      - JavaScript
+      - HTML
+      - CSS
+    category: "Professional"
+
+  - name: Bus Ticket Booking System
+    role: Developer
+    timeline: "2024"
+    summary: "An online bus ticket booking system with seat selection functionality."
+    tags:
+      - Java
+      - Database
+      - Web Development
+    category: "Academic"
+
+  - name: Responsive Portfolio Website
+    role: Developer
+    timeline: "2024"
+    summary: "A responsive personal portfolio website built with HTML, CSS and DaisyUI."
+    tags:
+      - HTML
+      - CSS
+      - DaisyUI
+    category: "Academic"
+
+  - name: Restaurant Menu System
+    role: Developer
+    timeline: "2024"
+    summary: "A Java-based console application for managing restaurant orders."
+    tags:
+      - Java
+      - OOP
+    category: "Academic"

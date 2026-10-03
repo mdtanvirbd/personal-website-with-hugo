@@ -1,0 +1,55 @@
+section:
+  name: Skills
+  id: skills
+  enable: true
+  weight: 2
+  showOnNavbar: true
+
+skills:
+  - name: Programming Languages
+    summary: "Strong foundation in programming, problem solving, algorithms, and logical thinking using multiple programming languages."
+    categories:
+      - name: Programming
+        items:
+          - Python
+          - C
+          - C++
+          - Java
+          - JavaScript
+
+  - name: Frontend Development
+    summary: "Building responsive and modern web interfaces with clean layouts, reusable components, and user-friendly designs."
+    categories:
+      - name: Frontend
+        items:
+          - HTML
+          - CSS
+          - React
+          - Tailwind CSS
+          - DaisyUI
+
+  - name: Backend & Database
+    summary: "Understanding backend development, database management, data storage, and basic application integration."
+    categories:
+      - name: Backend
+        items:
+          - Node.js
+          - MySQL
+          - Firebase
+
+  - name: Data Science
+    summary: "Understanding data analysis, data processing, and machine learning fundamentals for working with datasets and extracting useful insights."
+    categories:
+      - name: Data Science
+        items:
+          - NumPy
+          - Pandas
+          - Machine Learning
+
+  - name: Tools
+    summary: "Using development and collaboration tools for version control, code management, project development, and efficient workflows."
+    categories:
+      - name: Tools
+        items:
+          - Git
+          - GitHub

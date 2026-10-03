@@ -1,0 +1,36 @@
+section:
+  name: About
+  id: about
+  enable: true
+  weight: 1
+  showOnNavbar: true
+
+designation: CMS Frontend Developer
+
+company:
+  name: Softvence Agency
+  url: "https://softvence.agency"
+
+summary: |
+  I am a CMS Frontend Developer with a strong foundation in Computer Science and Engineering.
+  I have experience working with React and modern frontend technologies to build responsive
+  and user-friendly web interfaces. I have solved 100+ programming problems and participated
+  in university programming contests. Currently, I am pursuing an M.Sc. in Computer Science
+  and Engineering with a focus on Data Science.
+
+socialLinks:
+  - name: Email
+    icon: "fas fa-envelope"
+    url: "mailto:youaretanvirhossain@gmail.com"
+
+  - name: Github
+    icon: "fab fa-github"
+    url: "https://github.com/mdtanvirbd"
+
+  - name: LinkedIn
+    icon: "fab fa-linkedin"
+    url: "https://linkedin.com/in/md-tanvir-hossain-346011267/"
+
+resourceLinks:
+  - title: "My Resume"
+    url: "files/resume.pdf"

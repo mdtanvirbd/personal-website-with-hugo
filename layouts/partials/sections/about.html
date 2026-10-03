@@ -1,0 +1,465 @@
+```html
+{{ $sectionID := replace (lower .section.name) " " "-" }}
+{{ if .section.id }}
+  {{ $sectionID = .section.id }}
+{{ end }}
+
+{{ $author := hugo.Data.author }}
+{{ if (index hugo.Data site.Language.Lang).author }}
+  {{ $author = (index hugo.Data site.Language.Lang).author }}
+{{ end }}
+
+<div class="container anchor p-lg-5 about-section" id="{{ $sectionID }}">
+
+  <div class="row pt-sm-2 pt-md-4 align-self-center">
+
+    <!-- =========================================
+         LEFT SIDE - ABOUT CONTENT
+         ========================================= -->
+
+    <div class="col-sm-6 about-content">
+
+      <h3 class="p-1">
+        {{ $author.name }}
+      </h3>
+
+      {{ if .designation }}
+
+      <h5 class="p-1">
+
+        {{ .designation }}
+
+        {{ if .company }}
+
+        {{ i18n "at" }}
+
+        <a
+          href="{{ .company.url }}"
+          title="{{ .company.name }}"
+          target="_blank"
+          rel="noopener"
+        >
+          {{ .company.name }}
+        </a>
+
+        {{ end }}
+
+      </h5>
+
+      {{ end }}
+
+
+      <!-- SUMMARY -->
+
+      <p class="p-1 text-justify">
+        {{ .summary | markdownify }}
+      </p>
+
+
+      <!-- SOCIAL LINKS -->
+
+      <div class="text-container ms-auto">
+
+        <ul class="social-link d-flex">
+
+          {{ range .socialLinks }}
+
+          <li>
+
+            {{ if eq .name "Email" }}
+
+            <a
+              href="{{ .url }}"
+              title="{{ .name }}"
+              target="_blank"
+              rel="{{ .rel | default "noopener" }}"
+            >
+              <i class="{{ .icon }}"></i>
+            </a>
+
+            {{ else if eq .name (i18n "phone") }}
+
+            <a
+              href="tel:{{ .url }}"
+              title="{{ .name }}"
+              target="_blank"
+              rel="{{ .rel | default "noopener" }}"
+            >
+              <i class="{{ .icon }}"></i>
+            </a>
+
+            {{ else }}
+
+            <a
+              href="{{ .url }}"
+              title="{{ .name }}"
+              target="_blank"
+              rel="{{ .rel | default "noopener" }}"
+            >
+              <i class="{{ .icon }}"></i>
+            </a>
+
+            {{ end }}
+
+          </li>
+
+          {{ end }}
+
+        </ul>
+
+      </div>
+
+
+      <!-- RESUME -->
+
+      {{ if .resume }}
+
+      <a
+        href="{{ .resume | relURL }}"
+        title="{{ i18n "resume" }}"
+        target="_blank"
+      >
+        <button class="btn btn-dark">
+          {{ i18n "resume" }}
+        </button>
+      </a>
+
+      {{ end }}
+
+
+      <!-- RESOURCE LINKS -->
+
+      {{ range .resourceLinks }}
+
+      <a
+        href="{{ .url | relURL }}"
+        title="{{ .title }}"
+        target="_blank"
+      >
+        <button class="btn btn-dark">
+          {{ .title }}
+        </button>
+      </a>
+
+      {{ end }}
+
+    </div>
+
+
+    <!-- =========================================
+         RIGHT SIDE - SKILLS
+         ========================================= -->
+
+    <div class="col-sm-6 about-skills">
+
+      <div class="skills-triangle">
+
+
+        <!-- =====================================
+             LEADERSHIP - 70%
+             ===================================== -->
+
+        <div class="skill-circle leadership">
+
+          <div class="circular-progress leadership-progress">
+
+            <span class="circular-progress-left">
+
+              <span
+                class="circular-progress-bar circular-progress-percentage-20"
+              ></span>
+
+            </span>
+
+            <span class="circular-progress-right">
+
+              <span
+                class="circular-progress-bar circular-progress-percentage-50"
+              ></span>
+
+            </span>
+
+            <div class="circular-progress-value">
+              Leadership
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- =====================================
+             HARD WORKING - 80%
+             ===================================== -->
+
+        <div class="skill-circle hard-working">
+
+          <div class="circular-progress orange">
+
+            <span class="circular-progress-left">
+
+              <span
+                class="circular-progress-bar circular-progress-percentage-30 circular-progress-percentage-50-delay"
+              ></span>
+
+            </span>
+
+            <span class="circular-progress-right">
+
+              <span
+                class="circular-progress-bar circular-progress-percentage-50"
+              ></span>
+
+            </span>
+
+            <div class="circular-progress-value">
+              Hard Working
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- =====================================
+             TEAM WORKING - 90%
+             ===================================== -->
+
+        <div class="skill-circle team-working">
+
+          <div class="circular-progress team-progress">
+
+            <span class="circular-progress-left">
+
+              <span
+                class="circular-progress-bar circular-progress-percentage-40"
+              ></span>
+
+            </span>
+
+            <span class="circular-progress-right">
+
+              <span
+                class="circular-progress-bar circular-progress-percentage-50"
+              ></span>
+
+            </span>
+
+            <div class="circular-progress-value">
+              Team Working
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================
+     CUSTOM CSS
+     ========================================= -->
+
+<style>
+
+/* =========================================
+   RIGHT SIDE
+   ========================================= */
+
+.about-skills {
+  position: relative;
+  min-height: 360px;
+}
+
+
+/* =========================================
+   TRIANGLE CONTAINER
+   ========================================= */
+
+.skills-triangle {
+  position: relative;
+  width: 100%;
+  height: 360px;
+}
+
+
+/* =========================================
+   CIRCLE WRAPPER
+   ========================================= */
+
+.skill-circle {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+}
+
+
+/* =========================================
+   LEADERSHIP
+   TOP CENTER
+   ========================================= */
+
+.skill-circle.leadership {
+
+  top: 0;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+}
+
+
+/* =========================================
+   HARD WORKING
+   BOTTOM LEFT
+   ========================================= */
+
+.skill-circle.hard-working {
+
+  bottom: 0;
+
+  left: 3%;
+
+}
+
+
+/* =========================================
+   TEAM WORKING
+   BOTTOM RIGHT
+   ========================================= */
+
+.skill-circle.team-working {
+
+  bottom: 0;
+
+  right: 3%;
+
+}
+
+
+/* =========================================
+   KEEP TOHA CIRCLE SIZE
+   ========================================= */
+
+.skill-circle .circular-progress {
+
+  width: 150px;
+
+  height: 150px;
+
+  margin: 0;
+
+}
+
+
+/* =========================================
+   LEADERSHIP COLOR
+   #048DFF
+   ========================================= */
+
+.leadership-progress .circular-progress-bar {
+
+  border-color: #048DFF !important;
+
+}
+
+
+/* =========================================
+   TEAM WORKING COLOR
+   #EEBB4D
+   ========================================= */
+
+.team-progress .circular-progress-bar {
+
+  border-color: #EEBB4D !important;
+
+}
+
+
+/* =========================================
+   TEXT INSIDE CIRCLE
+   ========================================= */
+
+.skill-circle .circular-progress-value {
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  line-height: 1.3;
+
+  text-align: center;
+
+  padding: 0 8px;
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 767px) {
+
+  .about-skills {
+
+    min-height: 480px;
+
+    margin-top: 40px;
+
+  }
+
+
+  .skills-triangle {
+
+    height: 460px;
+
+  }
+
+
+  /* Leadership */
+
+  .skill-circle.leadership {
+
+    top: 0;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+  }
+
+
+  /* Hard Working */
+
+  .skill-circle.hard-working {
+
+    bottom: 0;
+
+    left: 0;
+
+  }
+
+
+  /* Team Working */
+
+  .skill-circle.team-working {
+
+    bottom: 0;
+
+    right: 0;
+
+  }
+
+}
+
+</style>
+```

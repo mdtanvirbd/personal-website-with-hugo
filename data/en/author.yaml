@@ -1,0 +1,13 @@
+name: "Md. Tanvir Hossain"
+nickname: "Tanvir"
+image: "images/author/tanvir-new.png"
+greeting: "Hi, I am"
+
+contactInfo:
+  email: "youaretanvirhossain@gmail.com"
+  phone: "+8801872668075"
+
+summary:
+  - I am a CMS Frontend Developer
+  - I work with React and modern web technologies
+  - I am pursuing an M.Sc. in Computer Science and Engineering (Data Science)
